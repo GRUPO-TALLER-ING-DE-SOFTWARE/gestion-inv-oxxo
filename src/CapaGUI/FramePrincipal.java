@@ -97,18 +97,26 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
         // TODO add your handling code here:
+        new FrameInventario().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnInventarioActionPerformed
 
     private void btnStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStockActionPerformed
         // TODO add your handling code here:
+        new FrameStock().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnStockActionPerformed
 
     private void btnAlertasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlertasActionPerformed
         // TODO add your handling code here:
+        new FrameAlertas().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnAlertasActionPerformed
 
     private void btnVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentaActionPerformed
         // TODO add your handling code here:
+        new FrameVenta().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnVentaActionPerformed
 
     /**
