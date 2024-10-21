@@ -129,7 +129,7 @@ public class FrameInventario extends javax.swing.JFrame {
 
         jButton5.setText("Generar Reporte");
 
-        jButton6.setText("jButton6");
+        jButton6.setText("Volver");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -154,7 +154,7 @@ public class FrameInventario extends javax.swing.JFrame {
                 .addComponent(jButton5)
                 .addGap(34, 34, 34)
                 .addComponent(jButton6)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

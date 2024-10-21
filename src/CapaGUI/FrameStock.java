@@ -40,6 +40,7 @@ public class FrameStock extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
+        jButtonVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,6 +107,13 @@ public class FrameStock extends javax.swing.JFrame {
 
         jLabel4.setText("control stock");
 
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -123,9 +131,12 @@ public class FrameStock extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jButton1)
                                     .addGap(18, 18, 18)
-                                    .addComponent(jButton2)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jButton3)))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jButtonVolver)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jButton2)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jButton3)))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -164,7 +175,9 @@ public class FrameStock extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(jButtonVolver)
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         pack();
@@ -253,6 +266,12 @@ public class FrameStock extends javax.swing.JFrame {
         Quantity.setText(jTable1.getValueAt(selectedRow, 2).toString());
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        // TODO add your handling code here:
+        new FramePrincipal().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonVolverActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -264,6 +283,7 @@ public class FrameStock extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

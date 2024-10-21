@@ -3,11 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package CapaNegocio;
+import CapaConexion.ConexionMySQL;        
 
 /**
  *
  * @author Lab301
  */
 public class NegocioVenta {
-    
 }
