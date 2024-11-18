@@ -34,60 +34,56 @@ public class FrameStock extends javax.swing.JFrame {
         ProductID = new javax.swing.JTextField();
         ProductName = new javax.swing.JTextField();
         Quantity = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jButtonAnadir = new javax.swing.JButton();
+        jButtonActualizar = new javax.swing.JButton();
+        jButtonEliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableStock = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jButtonVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("producto ID");
+        jLabel1.setText("ID Producto");
 
-        jLabel2.setText("nombre");
+        jLabel2.setText("Nombre");
 
-        jLabel3.setText("cantidad");
+        jLabel3.setText("Cantidad");
 
-        ProductID.setText("IDT");
         ProductID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ProductIDActionPerformed(evt);
             }
         });
 
-        ProductName.setText("NOMBRET");
         ProductName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ProductNameActionPerformed(evt);
             }
         });
 
-        Quantity.setText("CANTIDADT");
-
-        jButton1.setText("añadir");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAnadir.setText("AÑADIR");
+        jButtonAnadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonAnadirActionPerformed(evt);
             }
         });
 
-        jButton2.setText("actualizar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonActualizar.setText("ACTUALIZAR");
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonActualizarActionPerformed(evt);
             }
         });
 
-        jButton3.setText("eliminar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonEliminar.setText("ELIMINAR");
+        jButtonEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonEliminarActionPerformed(evt);
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableStock.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -98,16 +94,16 @@ public class FrameStock extends javax.swing.JFrame {
                 "ID", "NOMBRE", "CANTIDAD"
             }
         ));
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jTableStock.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
+                jTableStockMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTableStock);
 
-        jLabel4.setText("control stock");
+        jLabel4.setText("Control Stock");
 
-        jButtonVolver.setText("Volver");
+        jButtonVolver.setText("VOLVER");
         jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVolverActionPerformed(evt);
@@ -123,20 +119,19 @@ public class FrameStock extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addGap(35, 35, 35)
-                                    .addComponent(Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jButton1)
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jButtonVolver)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jButton2)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jButton3)))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jButtonAnadir)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButtonVolver)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButtonActualizar)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButtonEliminar))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -150,7 +145,7 @@ public class FrameStock extends javax.swing.JFrame {
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(62, 62, 62)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(106, 106, 106))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,9 +167,9 @@ public class FrameStock extends javax.swing.JFrame {
                     .addComponent(Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(jButtonAnadir)
+                    .addComponent(jButtonActualizar)
+                    .addComponent(jButtonEliminar))
                 .addGap(36, 36, 36)
                 .addComponent(jButtonVolver)
                 .addContainerGap(92, Short.MAX_VALUE))
@@ -183,10 +178,10 @@ public class FrameStock extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
         // TODO add your handling code here:
          // Obtiene la fila seleccionada
-    int selectedRow = jTable1.getSelectedRow();
+    int selectedRow = jTableStock.getSelectedRow();
     
     if (selectedRow >= 0) {
         // Obtiene los valores actualizados de los campos de texto
@@ -195,7 +190,7 @@ public class FrameStock extends javax.swing.JFrame {
         String quantity = Quantity.getText();
         
         // Actualiza la fila seleccionada con los nuevos valores
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel) jTableStock.getModel();
         model.setValueAt(id, selectedRow, 0);
         model.setValueAt(name, selectedRow, 1);
         model.setValueAt(quantity, selectedRow, 2);
@@ -208,16 +203,16 @@ public class FrameStock extends javax.swing.JFrame {
         // Si no hay fila seleccionada, muestra un mensaje de error
         javax.swing.JOptionPane.showMessageDialog(this, "Selecciona un producto para actualizar.");
     }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
         // TODO add your handling code here:
             // Obtiene la fila seleccionada
-    int selectedRow = jTable1.getSelectedRow();
+    int selectedRow = jTableStock.getSelectedRow();
     
     if (selectedRow >= 0) {
         // Elimina la fila seleccionada de la tabla
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel) jTableStock.getModel();
         model.removeRow(selectedRow);
         
         // Limpia los campos de texto
@@ -228,7 +223,7 @@ public class FrameStock extends javax.swing.JFrame {
         // Si no hay fila seleccionada, muestra un mensaje de error
         javax.swing.JOptionPane.showMessageDialog(this, "Selecciona un producto para eliminar.");
     }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButtonEliminarActionPerformed
 
     private void ProductIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductIDActionPerformed
         // TODO add your handling code here:
@@ -238,7 +233,7 @@ public class FrameStock extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ProductNameActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonAnadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnadirActionPerformed
         // TODO add your handling code here:
             // Obtiene los valores de los campos de texto
     String id = ProductID.getText();
@@ -246,7 +241,7 @@ public class FrameStock extends javax.swing.JFrame {
     String quantity = Quantity.getText();
     
     // Agrega los datos a la tabla
-    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    DefaultTableModel model = (DefaultTableModel) jTableStock.getModel();
     model.addRow(new Object[]{id, name, quantity});
     
     // Limpia los campos de texto para nuevas entradas
@@ -254,17 +249,17 @@ public class FrameStock extends javax.swing.JFrame {
     ProductName.setText("");
     Quantity.setText("");
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonAnadirActionPerformed
 
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+    private void jTableStockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableStockMouseClicked
         // TODO add your handling code here
-                int selectedRow = jTable1.getSelectedRow();
+                int selectedRow = jTableStock.getSelectedRow();
         
         // Pone los valores de la fila seleccionada en los campos de texto
-        ProductID.setText(jTable1.getValueAt(selectedRow, 0).toString());
-        ProductName.setText(jTable1.getValueAt(selectedRow, 1).toString());
-        Quantity.setText(jTable1.getValueAt(selectedRow, 2).toString());
-    }//GEN-LAST:event_jTable1MouseClicked
+        ProductID.setText(jTableStock.getValueAt(selectedRow, 0).toString());
+        ProductName.setText(jTableStock.getValueAt(selectedRow, 1).toString());
+        Quantity.setText(jTableStock.getValueAt(selectedRow, 2).toString());
+    }//GEN-LAST:event_jTableStockMouseClicked
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
         // TODO add your handling code here:
@@ -280,15 +275,15 @@ public class FrameStock extends javax.swing.JFrame {
     private javax.swing.JTextField ProductID;
     private javax.swing.JTextField ProductName;
     private javax.swing.JTextField Quantity;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButtonActualizar;
+    private javax.swing.JButton jButtonAnadir;
+    private javax.swing.JButton jButtonEliminar;
     private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableStock;
     // End of variables declaration//GEN-END:variables
 }
