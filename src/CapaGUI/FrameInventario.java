@@ -4,6 +4,8 @@
  */
 package CapaGUI;
 
+import CapaNegocio.NegocioInventario;
+
 /**
  *
  * @author Lab305
@@ -13,8 +15,10 @@ public class FrameInventario extends javax.swing.JFrame {
     /**
      * Creates new form FrameInventario
      */
+    NegocioInventario neg = new NegocioInventario();
     public FrameInventario() {
         initComponents();
+        neg.llenarTabla(jTableInventario);
     }
 
     /**
@@ -28,17 +32,18 @@ public class FrameInventario extends javax.swing.JFrame {
 
         jMenu1 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jTextFieldBusqueda = new javax.swing.JTextField();
+        jButtonBuscar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jTableInventario = new javax.swing.JTable();
+        jButtonAgregar = new javax.swing.JButton();
+        jButtonEditar = new javax.swing.JButton();
+        jButtonEliminar = new javax.swing.JButton();
+        jButtonReporte = new javax.swing.JButton();
+        jButtonVolver = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -48,24 +53,33 @@ public class FrameInventario extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setToolTipText("");
 
-        jTextField1.setToolTipText("");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldBusqueda.setToolTipText("");
+        jTextFieldBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jTextFieldBusquedaActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Buscar Producto");
+        jButtonBuscar.setText("Buscar Producto");
+        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("ID");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jTextField1)
+                .addContainerGap()
+                .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(jTextFieldBusqueda)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonBuscar)
                 .addGap(45, 45, 45))
         );
         jPanel1Layout.setVerticalGroup(
@@ -73,8 +87,9 @@ public class FrameInventario extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jTextFieldBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonBuscar)
+                    .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -100,7 +115,7 @@ public class FrameInventario extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTableInventario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -111,28 +126,28 @@ public class FrameInventario extends javax.swing.JFrame {
                 "ID", "Nombre", "Categoria", "Cantidad", "Estado", "Precio", "Nivel de Reorden"
             }
         ));
-        jTable2.setCellSelectionEnabled(true);
-        jTable2.setOpaque(false);
-        jTable2.setRequestFocusEnabled(false);
-        jScrollPane2.setViewportView(jTable2);
+        jTableInventario.setCellSelectionEnabled(true);
+        jTableInventario.setOpaque(false);
+        jTableInventario.setRequestFocusEnabled(false);
+        jScrollPane2.setViewportView(jTableInventario);
 
-        jButton2.setText("Agregar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAgregar.setText("Agregar");
+        jButtonAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonAgregarActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Editar");
+        jButtonEditar.setText("Editar");
 
-        jButton4.setText("Eliminar");
+        jButtonEliminar.setText("Eliminar");
 
-        jButton5.setText("Generar Reporte");
+        jButtonReporte.setText("Generar Reporte");
 
-        jButton6.setText("Volver");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                jButtonVolverActionPerformed(evt);
             }
         });
 
@@ -145,15 +160,15 @@ public class FrameInventario extends javax.swing.JFrame {
             .addComponent(jScrollPane2)
             .addGroup(layout.createSequentialGroup()
                 .addGap(109, 109, 109)
-                .addComponent(jButton2)
+                .addComponent(jButtonAgregar)
                 .addGap(37, 37, 37)
-                .addComponent(jButton3)
+                .addComponent(jButtonEditar)
                 .addGap(35, 35, 35)
-                .addComponent(jButton4)
+                .addComponent(jButtonEliminar)
                 .addGap(36, 36, 36)
-                .addComponent(jButton5)
+                .addComponent(jButtonReporte)
                 .addGap(34, 34, 34)
-                .addComponent(jButton6)
+                .addComponent(jButtonVolver)
                 .addContainerGap(107, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -164,11 +179,11 @@ public class FrameInventario extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
+                    .addComponent(jButtonAgregar)
+                    .addComponent(jButtonEditar)
+                    .addComponent(jButtonEliminar)
+                    .addComponent(jButtonReporte)
+                    .addComponent(jButtonVolver))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE)
                 .addContainerGap())
@@ -177,37 +192,42 @@ public class FrameInventario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextFieldBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBusquedaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTextFieldBusquedaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonAgregarActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
         // TODO add your handling code here:
         new FramePrincipal().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_jButtonVolverActionPerformed
+
+    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonBuscarActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButtonAgregar;
+    private javax.swing.JButton jButtonBuscar;
+    private javax.swing.JButton jButtonEditar;
+    private javax.swing.JButton jButtonEliminar;
+    private javax.swing.JButton jButtonReporte;
+    private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     public javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable jTableInventario;
+    private javax.swing.JTextField jTextFieldBusqueda;
     // End of variables declaration//GEN-END:variables
 }
