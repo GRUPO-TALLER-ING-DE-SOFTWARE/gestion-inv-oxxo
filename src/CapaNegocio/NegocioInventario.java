@@ -6,6 +6,7 @@ package CapaNegocio;
 
 import CapaConexion.ConexionMySQL;
 import CapaDTO.Inventario;
+import CapaConexion.ConexionMySQL; 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -13,12 +14,12 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author Lab301
  */
 public class NegocioInventario {
+    
     ConexionMySQL conec = new ConexionMySQL();
     
     public void initConection(){
