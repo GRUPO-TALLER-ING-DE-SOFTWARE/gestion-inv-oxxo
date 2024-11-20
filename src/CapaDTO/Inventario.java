@@ -10,13 +10,17 @@ package CapaDTO;
  * @author cbas2
  */
 public class Inventario {
-    private int id;
-    private String nombre;
-    private String categoria;
-    private int cantidad;
-    private String estado;
-    private float precio;
-    private int nivel_reorden;
+    private int id; // Primary key del inventario, auto incremental no nulo
+    private String nombre; // Varchar(50) not null, esto es de producto, hay que editar
+    private String categoria; // Varchar(25) not null, lo mismo que el de arriba
+    private int cantidad; // int not null
+    private String estado; // Varchar(25) not null
+    private float precio; // float not null, tambien viene desde producto
+    private int nivel_reorden; // int not null
+    /*Recomiendo para este objeto hacer lo siguiente:
+    - Borrar todos los getter and setter para luego hacerlos cuando hagamos bien los datos.
+    - Borrar todos los datos que vienen desde la tabla producto, y traer solo la primary key como foreign key.
+    */
 
     public int getId() {
         return id;
