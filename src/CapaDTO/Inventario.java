@@ -20,6 +20,13 @@ public class Inventario {
     /*Recomiendo para este objeto hacer lo siguiente:
     - Borrar todos los getter and setter para luego hacerlos cuando hagamos bien los datos.
     - Borrar todos los datos que vienen desde la tabla producto, y traer solo la primary key como foreign key.
+
+    TABLAS SQL:
+create table productos (id int primary key auto_increment not null, nombre varchar(50) not null, categoria varchar(50), precio float not null);
+create table inventario (id int primary key auto_increment not null, id_producto int not null, estado int not null, nivel_reorden int not null, foreign key (id_producto) references productos(id));
+create table stock (id int primary key auto_increment not null, id_producto int not null, cantidad int not null, foreign key (id_producto) references productos(id));
+create table venta (id int primary key auto_increment not null, id_producto int not null, cantidad int not null, precio_total float not null, fecha date not null, foreign key (id_producto) references productos(id));
+
     */
 
     public int getId() {
