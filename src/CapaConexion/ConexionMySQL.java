@@ -227,16 +227,16 @@ public class ConexionMySQL
          if(this.isEsSelect()) //SELECT
          {
              //Se carga el ResultSet
-             //try
-             //{
-                 //this.setDbresultSet(st.executeQuery(this.getCadenaSQL()));
-             //}
-             //catch(Exception ex)
-             //{
-                //JOptionPane.showMessageDialog(null, "Error de carga ResultSet " + ex.getMessage()); 
-                //return;
+             try
+             {
+                 this.setDbresultSet(st.executeQuery(this.getCadenaSQL()));
+             }
+             catch(Exception ex)
+             {
+                 System.out.println("Error de carga ResultSet " + ex.getMessage()); 
+                return;
              
-             //}
+             }
          }
          else //UPDATE - INSERT - DELETE
          {

@@ -11,16 +11,12 @@ package CapaDTO;
  */
 public class Inventario {
     private int id; // Primary key del inventario, auto incremental no nulo
-    private String nombre; // Varchar(50) not null, esto es de producto, hay que editar
-    private String categoria; // Varchar(25) not null, lo mismo que el de arriba
+    private int id_producto; // Varchar(50) not null, esto es de producto, hay que editar
     private int cantidad; // int not null
     private String estado; // Varchar(25) not null
-    private float precio; // float not null, tambien viene desde producto
     private int nivel_reorden; // int not null
-    /*Recomiendo para este objeto hacer lo siguiente:
-    - Borrar todos los getter and setter para luego hacerlos cuando hagamos bien los datos.
-    - Borrar todos los datos que vienen desde la tabla producto, y traer solo la primary key como foreign key.
-
+    /*
+    
     TABLAS SQL:
 create table productos (id int primary key auto_increment not null, nombre varchar(50) not null, categoria varchar(50), precio float not null);
 create table inventario (id int primary key auto_increment not null, id_producto int not null, estado int not null, nivel_reorden int not null, foreign key (id_producto) references productos(id));
@@ -37,20 +33,12 @@ create table venta (id int primary key auto_increment not null, id_producto int 
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public int getId_producto() {
+        return id_producto;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setId_producto(int id_producto) {
+        this.id_producto = id_producto;
     }
 
     public int getCantidad() {
@@ -69,14 +57,6 @@ create table venta (id int primary key auto_increment not null, id_producto int 
         this.estado = estado;
     }
 
-    public float getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(float precio) {
-        this.precio = precio;
-    }
-
     public int getNivel_reorden() {
         return nivel_reorden;
     }
@@ -85,3 +65,4 @@ create table venta (id int primary key auto_increment not null, id_producto int 
         this.nivel_reorden = nivel_reorden;
     }
 }
+
