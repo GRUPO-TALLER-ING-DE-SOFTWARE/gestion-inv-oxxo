@@ -3,14 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/Repo/src/CapaDTO/Inventario.java</file>
-            <file>file:/F:/Repo/src/CapaConexion/ConexionMySQL.java</file>
-            <file>file:/F:/Repo/src/CapaGUI/FrameInventario.java</file>
-            <file>file:/F:/Repo/src/CapaGUI/FramePrincipal.java</file>
-            <file>file:/F:/Repo/src/CapaNegocio/NegocioInventario.java</file>
-            <file>file:/F:/Repo/nbproject/build-impl.xml</file>
-            <file>file:/F:/Repo/src/CapaGUI/FrameAlertas.java</file>
-            <file>file:/F:/Repo/src/CapaDTO/Alerta.java</file>
+            <file>file:/C:/Users/oscar/OneDrive/Escritorio/repo/src/CapaGUI/FrameAlertas.java</file>
+            <file>file:/C:/Users/oscar/OneDrive/Escritorio/repo/src/CapaDTO/Inventario.java</file>
+            <file>file:/C:/Users/oscar/OneDrive/Escritorio/repo/src/CapaNegocio/NegocioVenta.java</file>
+            <file>file:/C:/Users/oscar/OneDrive/Escritorio/repo/src/CapaDTO/Alerta.java</file>
+            <file>file:/C:/Users/oscar/OneDrive/Escritorio/repo/src/CapaGUI/FrameStock.java</file>
+            <file>file:/C:/Users/oscar/OneDrive/Escritorio/repo/src/CapaGUI/FramePrincipal.java</file>
+            <file>file:/C:/Users/oscar/OneDrive/Escritorio/repo/src/CapaDTO/DetalleVenta.java</file>
+            <file>file:/C:/Users/oscar/OneDrive/Escritorio/repo/src/CapaConexion/ConexionMySQL.java</file>
+            <file>file:/C:/Users/oscar/OneDrive/Escritorio/repo/src/CapaGUI/FrameVenta.java</file>
+            <file>file:/C:/Users/oscar/OneDrive/Escritorio/repo/src/CapaDTO/Stock.java</file>
+            <file>file:/C:/Users/oscar/OneDrive/Escritorio/repo/src/CapaNegocio/NegocioStock.java</file>
+            <file>file:/C:/Users/oscar/OneDrive/Escritorio/repo/src/CapaDTO/Venta.java</file>
         </group>
     </open-files>
 </project-private>
