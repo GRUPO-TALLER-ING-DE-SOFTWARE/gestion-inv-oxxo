@@ -5,22 +5,29 @@ package CapaDTO;
  * @author oscar
  */
 public class Stock {
-    private int id;              // ID del stock
-    private int id_producto;     // ID del producto asociado al stock
-    private int cantidad;        // Cantidad en stock
-
-    // Constructor por defecto
+    // Atributos
+    private int id;
+    private int id_producto;
+    private int cantidad;
+    
+    // Constructor vacío
     public Stock() {
     }
-
-    // Constructor con parámetros
+    
+    // Constructor con todos los campos
     public Stock(int id, int id_producto, int cantidad) {
         this.id = id;
         this.id_producto = id_producto;
         this.cantidad = cantidad;
     }
-
-    // Getters y setters para cada atributo
+    
+    // Constructor sin id (útil para inserciones donde el id es autoincremental)
+    public Stock(int id_producto, int cantidad) {
+        this.id_producto = id_producto;
+        this.cantidad = cantidad;
+    }
+    
+    // Getters y Setters
     public int getId() {
         return id;
     }
@@ -44,16 +51,19 @@ public class Stock {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-
-    // Método toString para mostrar la información del objeto de manera legible
+    
+    // Método toString para facilitar la depuración
     @Override
     public String toString() {
-        return "Stock{" +
-                "id=" + id +
-                ", id_producto=" + id_producto +
-                ", cantidad=" + cantidad +
+        return "Stock{" + 
+                "id=" + id + 
+                ", id_producto=" + id_producto + 
+                ", cantidad=" + cantidad + 
                 '}';
     }
-  }
- 
-
+    
+    // Método para clonar un objeto Stock
+    public Stock clonar() {
+        return new Stock(this.id, this.id_producto, this.cantidad);
+    }
+}
