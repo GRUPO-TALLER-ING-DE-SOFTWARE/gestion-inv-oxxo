@@ -1,21 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package CapaDTO;
 
-import java.sql.Date;
-
-/**
- *
- * @author cbas2
- */
 public class Alerta {
+    private int id;
     private String descripcion;
-    private Date fecha;
+    private String fecha;
     private String prioridad;
-    private String acciones;
+    private String estado;
+
+    // Getters y Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getDescripcion() {
         return descripcion;
@@ -25,11 +24,11 @@ public class Alerta {
         this.descripcion = descripcion;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -41,11 +40,11 @@ public class Alerta {
         this.prioridad = prioridad;
     }
 
-    public String getAcciones() {
-        return acciones;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setAcciones(String acciones) {
-        this.acciones = acciones;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }
