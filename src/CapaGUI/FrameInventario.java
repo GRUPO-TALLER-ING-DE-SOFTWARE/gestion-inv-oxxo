@@ -262,6 +262,7 @@ public class FrameInventario extends javax.swing.JFrame {
 
     private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
         // TODO add your handling code here:
+        neg.agregarInventario(jTableInventario);
     }//GEN-LAST:event_jButtonAgregarActionPerformed
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
@@ -272,6 +273,7 @@ public class FrameInventario extends javax.swing.JFrame {
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         // TODO add your handling code here:
+        neg.buscarProducto(jTextFieldBusqueda.getText());
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
     /**
