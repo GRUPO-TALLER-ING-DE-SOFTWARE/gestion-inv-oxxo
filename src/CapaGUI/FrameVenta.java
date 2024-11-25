@@ -13,6 +13,7 @@ public class FrameVenta extends javax.swing.JFrame {
     /**
      * Creates new form FrameVenta
      */
+    //Instancia de Negocio
     public FrameVenta() {
         initComponents();
     }

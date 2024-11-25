@@ -138,12 +138,27 @@ public class FrameInventario extends javax.swing.JFrame {
 
         jButtonEditar.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButtonEditar.setText("Editar");
+        jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarActionPerformed(evt);
+            }
+        });
 
         jButtonEliminar.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButtonEliminar.setText("Eliminar");
+        jButtonEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEliminarActionPerformed(evt);
+            }
+        });
 
         jButtonReporte.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButtonReporte.setText("Generar Reporte");
+        jButtonReporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonReporteActionPerformed(evt);
+            }
+        });
 
         jButtonVolver.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButtonVolver.setText("Volver");
@@ -158,10 +173,7 @@ public class FrameInventario extends javax.swing.JFrame {
 
         jTableInventario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Nombre", "Categoria", "Cantidad", "Estado", "Precio", "Nivel de Reorden"
@@ -171,6 +183,7 @@ public class FrameInventario extends javax.swing.JFrame {
         jTableInventario.setOpaque(false);
         jTableInventario.setRequestFocusEnabled(false);
         jScrollPane2.setViewportView(jTableInventario);
+        jTableInventario.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -191,9 +204,11 @@ public class FrameInventario extends javax.swing.JFrame {
                         .addComponent(jButtonReporte)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonVolver)
-                        .addGap(0, 148, Short.MAX_VALUE)))
+                        .addGap(0, 148, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2)))
                 .addContainerGap())
-            .addComponent(jScrollPane2)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,6 +290,21 @@ public class FrameInventario extends javax.swing.JFrame {
         // TODO add your handling code here:
         neg.buscarProducto(jTextFieldBusqueda.getText());
     }//GEN-LAST:event_jButtonBuscarActionPerformed
+
+    private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
+        // TODO add your handling code here:
+        neg.editarInventario();
+    }//GEN-LAST:event_jButtonEditarActionPerformed
+
+    private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
+        // TODO add your handling code here:
+        neg.eliminarInventario();
+    }//GEN-LAST:event_jButtonEliminarActionPerformed
+
+    private void jButtonReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReporteActionPerformed
+        // TODO add your handling code here:
+        neg.generarReporte();
+    }//GEN-LAST:event_jButtonReporteActionPerformed
 
     /**
      * @param args the command line arguments

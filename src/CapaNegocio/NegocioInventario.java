@@ -44,7 +44,6 @@ public class NegocioInventario {
                 + " inventario i"
                 + " JOIN"
                 + " productos p ON i.id_producto = p.id;"); // Esto es una consulta SQL, con esto se pueden guiar para hacer las demas
-        System.out.println(conec.getCadenaSQL());
         conec.setEsSelect(true); // consultas. Solamente los SELECT devuelven un valor ResultSet en el conec.getDbresultSet(). Acordarse siempre de confirmar el valor conec.setEsSelect() para que no hayan errores.
         conec.conectar();
         ResultSet rs = conec.getDbresultSet();
@@ -84,12 +83,13 @@ public class NegocioInventario {
         return i;
     }
 
-    public void editarInventario(Inventario i, Inventario iNuevo) {
+    public void editarInventario() {
         initConection();
-        conec.setCadenaSQL("UPDATE inventario SET id_producto ='" + iNuevo.getId_producto()
-                + "', cantidad = '" + iNuevo.getCantidad()
-                + "', estado = '" + iNuevo.getEstado()
-                + "', nivel_reorden = '" + iNuevo.getNivel_reorden() + "'");
+        conec.setCadenaSQL("UPDATE inventario SET id_producto ='" + JOptionPane.showInputDialog("Ingrese un ID de producto nuevo")
+                + "', cantidad = '" + JOptionPane.showInputDialog("Ingrese una cantidad nueva")
+                + "', estado = '" + JOptionPane.showInputDialog("Ingrese un estado nuevo")
+                + "', nivel_reorden = '" + JOptionPane.showInputDialog("Ingrese un nivel de reorden nuevo") + "'"
+                        + "WHERE id = '"+JOptionPane.showInputDialog("Ingrese el ID a modificar")+"'");
         conec.setEsSelect(false);
         try {
             conec.conectar();
@@ -110,11 +110,29 @@ public class NegocioInventario {
         conec.setEsSelect(false);
         try {
             conec.conectar();
+            DefaultTableModel model = (DefaultTableModel) tabla.getModel();
+            model.setRowCount(0);
             llenarTabla(tabla);
             JOptionPane.showMessageDialog(null, "Se actualizaron los datos de la tabla inventario.");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No se pudieron actualizar los datos. Error: " + e.getMessage());
         }
     }
-
+    
+    public void generarReporte(){
+        JOptionPane.showMessageDialog(null,"Reporte creado");
+    }
+    
+    public void eliminarInventario(){
+        initConection();
+        conec.setCadenaSQL("DELETE FROM inventario WHERE id = '"+JOptionPane.showInputDialog("Ingresa el id del objeto a eliminar")+"'");
+        conec.setEsSelect(false);
+        try {
+            conec.conectar();
+            JOptionPane.showMessageDialog(null, "Se actualizaron los datos de la tabla inventario.");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se pudieron actualizar los datos. Error: " + e.getMessage());
+        }
+    }
+   
 }
